@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+
+  postgres:
+    image: postgres:16.2-bookworm
+
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data/:rw
+
+    ports:
+      - 5432:5432
+
+volumes:
+  postgresql_data:
